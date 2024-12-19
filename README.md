@@ -17,35 +17,38 @@ HANS-MD is an advanced WhatsApp bot built to make your WhatsApp experience more 
 
 ## 🔗 Important Links
 
-- **WhatsApp Channel:** [Join Here](https://whatsapp.com/channel/0029VasiOoR3bbUw5aV4qB31)
-- **Fork and Star the Repository:** [GitHub Repository](https://github.com/Mrhanstz/HANS-MD)
-- **Session ID Generator:** [Generate Here](https://hans-md-session-id-sowl.onrender.com/)
-- **Deploy on Heroku:** [Use Template](https://github.com/Mrhannstz/HANS-MD)
-- **WhatsApp Contact:** [Message Me](https://wa.me/255756530143)
-- **YouTube Channel:** [HANS-TECH](https://www.youtube.com/@HANS-TECH)
+[![WhatsApp Channel](https://img.shields.io/badge/Join%20WhatsApp%20Channel-green?style=for-the-badge&logo=whatsapp)](https://whatsapp.com/channel/0029VasiOoR3bbUw5aV4qB31)  
+[![Fork and Star](https://img.shields.io/badge/Fork%20%26%20Star%20Repo-blue?style=for-the-badge&logo=github)](https://github.com/Mrhanstz/HANS-MD)  
+[![Session ID Generator](https://img.shields.io/badge/Generate%20Session%20ID-orange?style=for-the-badge)](https://hans-md-session-id-sowl.onrender.com/)  
+[![Deploy to Heroku](https://img.shields.io/badge/Deploy%20on%20Heroku-purple?style=for-the-badge&logo=heroku)](https://github.com/Mrhannstz/HANS-MD)  
+[![Contact on WhatsApp](https://img.shields.io/badge/Message%20Me%20on%20WhatsApp-brightgreen?style=for-the-badge&logo=whatsapp)](https://wa.me/255756530143)  
+[![YouTube Channel](https://img.shields.io/badge/Visit%20YouTube%20Channel-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/@HANS-TECH)
 
 ---
 
 ## 🚀 Deployment Instructions
 
 1. **Fork the Repository**  
-   Go to the [GitHub Repository](https://github.com/Mrhanstz/HANS-MD) and click on **Fork**.
+   Click the button below to fork the repository:  
+   [![Fork and Star](https://img.shields.io/badge/Fork%20%26%20Star%20Repo-blue?style=for-the-badge&logo=github)](https://github.com/Mrhanstz/HANS-MD)
 
 2. **Generate Session ID**  
-   Visit [Session ID Generator](https://hans-md-session-id-sowl.onrender.com/) and create your session ID.
+   Click the button below to generate a session ID:  
+   [![Session ID Generator](https://img.shields.io/badge/Generate%20Session%20ID-orange?style=for-the-badge)](https://hans-md-session-id-sowl.onrender.com/)
 
 3. **Deploy on Heroku**  
    - Create a free account on [Heroku](https://heroku.com).  
-   - Use the [Heroku Deployment Template](https://github.com/Mrhannstz/HANS-MD) to set up the bot.  
+   - Use the button below to deploy using the template:  
+   [![Deploy to Heroku](https://img.shields.io/badge/Deploy%20on%20Heroku-purple?style=for-the-badge&logo=heroku)](https://github.com/Mrhannstz/HANS-MD)
 
 ---
 
 ## 📞 Support
 
 For any issues, feel free to contact me:  
-- **WhatsApp:** [Click Here](https://wa.me/255756530143)  
-- **WhatsApp Channel:** [Join Here](https://whatsapp.com/channel/0029VasiOoR3bbUw5aV4qB31)  
-- **YouTube Channel:** [HANS-TECH](https://www.youtube.com/@HANS-TECH)
+[![Contact on WhatsApp](https://img.shields.io/badge/Message%20Me%20on%20WhatsApp-brightgreen?style=for-the-badge&logo=whatsapp)](https://wa.me/255756530143)  
+[![WhatsApp Channel](https://img.shields.io/badge/Join%20WhatsApp%20Channel-green?style=for-the-badge&logo=whatsapp)](https://whatsapp.com/channel/0029VasiOoR3bbUw5aV4qB31)  
+[![YouTube Channel](https://img.shields.io/badge/Visit%20YouTube%20Channel-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/@HANS-TECH)
 
 ---
 
