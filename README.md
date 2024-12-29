@@ -1,12 +1,10 @@
-# HANS-MD
+   ðŸ™ â„ð”¸â„•ð•Š ð•„ð”» ð•„ð”¸ð”»ð”¼ ð”¹ð• â„ð”¸â„•ð•Šð•‹â„¤ ðŸŒŸ 
 
-![HANS-MD Logo](https://files.catbox.moe/cnkqte.webp)
+[![HANS-MD Logo](https://files.catbox.moe/cnkqte.webp)](https://whatsapp.com/channel/0029VasiOoR3bbUw5aV4qB31)
 
-HANS-MD is an advanced WhatsApp bot built to make your WhatsApp experience more interactive and efficient. Designed for seamless integration, HANS-MD allows users to perform tasks with ease and customization.
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&random=false&width=435&lines=ð‘»ð‘¯ð‘°ð‘º+ðˆð’+ð»ð´ð‘ð‘†-ðŒðƒ+ð‘´ð‘¨ð‘«ð‘¬+ð‘©ð’€+ð‡ð€ðð’ð“ð™+ðŸ‡¹ðŸ‡¿" alt="Typing SVG" /></a>
 
----
-
-## 🌟 Features
+  ðŸŒŸ Features 
 
 - Advanced bot functionalities for WhatsApp.  
 - Easy to use with session ID integration.  
@@ -15,64 +13,49 @@ HANS-MD is an advanced WhatsApp bot built to make your WhatsApp experience more 
 
 ---
 
-## 🔗 Important Links
+ðŸ‘‰ ðŸ”— Follow This steps
 
-### Follow My Channel  
-[![Follow My Channel](https://img.shields.io/badge/Follow%20My%20Channel-green?style=for-the-badge&logo=whatsapp)](https://whatsapp.com/channel/0029VasiOoR3bbUw5aV4qB31)
+1.ðŸ‘‡ Star and Fork This Repo  
+[![Star and Fork This Repo](https://img.shields.io/static/v1?label=Star%20%26%20Fork%20This%20Repo&message=GitHub&color=181717&style=for-the-badge&logo=github&logoColor=white)](https://github.com/kinghanstz/HANS-MD-V1/fork)  
 
-### Get Session ID Here  
-[![Get Session ID Here](https://img.shields.io/badge/Get%20Session%20ID-orange?style=for-the-badge)](https://hans-md-session-id-sowl.onrender.com/)
+<br>
 
-### Create Account on Heroku  
-[![Create Account on Heroku](https://img.shields.io/badge/Create%20Account%20on%20Heroku-purple?style=for-the-badge&logo=heroku)](https://heroku.com)
+2.ðŸ‘‡ Get Session ID Here  
+[![Get Session ID Here](https://img.shields.io/static/v1?label=Session%20ID&message=Generate&color=FF4500&style=for-the-badge&logo=firefox&logoColor=white)](https://hans-md-session-id-sowl.onrender.com/)  
 
-### Deploy to Heroku  
-[![Deploy to Heroku](https://img.shields.io/badge/Deploy%20to%20Heroku-blue?style=for-the-badge&logo=heroku)](https://github.com/Mrhannstz/HANS-MD)
+<br>
 
-### Fork and Star Repository  
-[![Fork and Star Repository](https://img.shields.io/badge/Fork%20%26%20Star%20Repository-brightblue?style=for-the-badge&logo=github)](https://github.com/Mrhanstz/HANS-MD)
+3.ðŸ‘‡ Create Account on Heroku  
+[![Create Account on Heroku](https://img.shields.io/static/v1?label=Create%20Account&message=Heroku&color=430098&style=for-the-badge&logo=heroku&logoColor=white)](https://heroku.com)  
 
-### Contact Me on WhatsApp  
-[![Contact Me on WhatsApp](https://img.shields.io/badge/Contact%20Me%20on%20WhatsApp-green?style=for-the-badge&logo=whatsapp)](https://wa.me/255756530143)
+<br>
 
-### Visit My YouTube Channel  
-[![Visit My YouTube Channel](https://img.shields.io/badge/Visit%20My%20YouTube%20Channel-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/@HANS-TECH)
+4.ðŸ‘‡ Deploy to Heroku If your have account
+[![Deploy to Heroku](https://img.shields.io/static/v1?label=Deploy%20to&message=Heroku&color=430098&style=for-the-badge&logo=heroku&logoColor=white)](https://dashboard.heroku.com/new?template=https://github.com/Mrhannstz/HANS-MD)  
 
 ---
 
-## 🚀 Deployment Instructions
+ ðŸ“ž Support My All Links Here ðŸ‘‹ðŸ˜Ž
 
-1. **Fork the Repository**  
-   [![Fork and Star Repository](https://img.shields.io/badge/Fork%20%26%20Star%20Repository-brightblue?style=for-the-badge&logo=github)](https://github.com/Mrhanstz/HANS-MD)
+For any issues or to stay updated, use the options below:  
 
-2. **Generate Session ID**  
-   [![Get Session ID Here](https://img.shields.io/badge/Get%20Session%20ID-orange?style=for-the-badge)](https://hans-md-session-id-sowl.onrender.com/)
+ðŸ‘‡ Follow My WhatsApp Channel ðŸ¤ 
+[![Follow My WhatsApp Channel](https://img.shields.io/static/v1?label=Follow%20My%20WhatsApp%20Channel&message=follow&color=25D366&style=for-the-badge&logo=whatsapp&logoColor=white)](https://whatsapp.com/channel/0029VasiOoR3bbUw5aV4qB31)  
 
-3. **Create Account on Heroku**  
-   [![Create Account on Heroku](https://img.shields.io/badge/Create%20Account%20on%20Heroku-purple?style=for-the-badge&logo=heroku)](https://heroku.com)
+<br>
 
-4. **Deploy to Heroku**  
-   Use the Heroku deployment template below to deploy HANS-MD:  
-   [![Deploy to Heroku](https://img.shields.io/badge/Deploy%20to%20Heroku-blue?style=for-the-badge&logo=heroku)](https://github.com/Mrhannstz/HANS-MD)
+ðŸ‘‡ Contact Me on WhatsApp  ðŸ¤
+[![Contact Me on WhatsApp](https://img.shields.io/static/v1?label=Contact%20Me%20on%20WhatsApp&message=Message&color=25D366&style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/255756530143)  
 
----
+<br>
 
-## 📞 Support
+ðŸ‘‡ Subscribe to My Channel on YouTube ðŸ¤ 
+[![Subscribe to My Channel on YouTube](https://img.shields.io/static/v1?label=Subscribe%20to%20My%20Channel&message=YouTube&color=FF0000&style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@HANSTZ-TECH)  
 
-For any issues, feel free to contact me:  
+<br>
 
-[![Contact Me on WhatsApp](https://img.shields.io/badge/Contact%20Me%20on%20WhatsApp-green?style=for-the-badge&logo=whatsapp)](https://wa.me/255756530143)  
-[![Follow My Channel](https://img.shields.io/badge/Follow%20My%20Channel-green?style=for-the-badge&logo=whatsapp)](https://whatsapp.com/channel/0029VasiOoR3bbUw5aV4qB31)  
-[![Visit My YouTube Channel](https://img.shields.io/badge/Visit%20My%20YouTube%20Channel-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/@HANS-TECH)
+ðŸ‘‡ Follow My GitHub ðŸ¤
+[![Follow My GitHub](https://img.shields.io/static/v1?label=Follow%20My%20GitHub&message=GitHub&color=181717&style=for-the-badge&logo=github&logoColor=white)](https://github.com/kinghanstz)  
 
----
 
-## ⭐ Contribution
-
-Feel free to contribute to the project by forking the repository and submitting a pull request. Don't forget to star the repo if you find it useful!
-
----
-
-### License
-
-This project is licensed under the MIT License.
+## â­ thanks for your choosing HANS-MDðŸ™
