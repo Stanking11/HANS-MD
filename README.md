@@ -31,9 +31,8 @@
 <br>
 
 4.👇 Deploy to Heroku If your have account
- ***[![Deploy on heroku](htps://www.herokucdn.com/deploy/button.svg)](https://dullah-website.vercel.app/Has.html)***
----
-
+ ***[![Deploy on heroku](https://www.herokucdn.com/deploy/button.svg)](https://dullah-website.vercel.app/Hans.html)***
+ 
  📞 Support My All Links Here 👋😎
 
 For any issues or to stay updated, use the options below:  
