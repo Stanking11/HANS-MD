@@ -1,1 +1,0 @@
-sh -c npm install && npm install -g qrcode-terminal pm2
