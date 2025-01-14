@@ -1,12 +1,10 @@
-const util = require('util');
-const fs = require('fs-extra');
-const { zokou } = require(__dirname + "/../framework/zokou");
-const { format } = require(__dirname + "/../framework/mesfonctions");
-const os = require("os");
-const moment = require("moment-timezone");
-const s = require(__dirname + "/../set");
-const more = String.fromCharCode(8206)
-const readmore = more.repeat(4001)
+const { zokou } = require('../framework/zokou');
+const traduire = require("../framework/traduction") ;
+const { default: axios } = require('axios');
+//const conf = require('../set');
+
+
+
 
 zokou({nomCom:"hanstech",reaction:"😁",categorie:"IA"},async(dest,zk,commandeOptions)=>{
 
