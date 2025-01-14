@@ -1,126 +1,75 @@
-const { zokou } = require('../framework/zokou');
-const traduire = require("../framework/traduction") ;
-const { default: axios } = require('axios');
-//const conf = require('../set');
+const util = require('util');
+const fs = require('fs-extra');
+const { zokou } = require(__dirname + "/../framework/zokou");
+const { format } = require(__dirname + "/../framework/mesfonctions");
+const os = require("os");
+const moment = require("moment-timezone");
+const s = require(__dirname + "/../set");
+const more = String.fromCharCode(8206)
+const readmore = more.repeat(4001)
 
-
-
-
-zokou({nomCom:"hanstech",reaction:"😁",categorie:"IA"},async(dest,zk,commandeOptions)=>{
-
-  const {repondre,ms,arg}=commandeOptions;
-  
-    if(!arg || !arg[0])
-    {return repondre("👋😂 Am here")}
-    //var quest = arg.join(' ');
-  try{
+zokou({ nomCom: "hanspayment", categorie: "General" }, async (dest, zk, commandeOptions) => {
+    let { ms, repondre ,prefixe,nomAuteurMessage,mybotpic} = commandeOptions;
+    let { cm } = require(__dirname + "/../framework//zokou");
+    var coms = {};
+    var mode = "public";
     
-    
-const message = await traduire(arg.join(' '),{ to : 'en'});
- console.log(message)
-fetch(`http://api.brainshop.ai/get?bid=177607&key=NwzhALqeO1kubFVD&uid=[uid]&msg=${message}`)
-.then(response => response.json())
-.then(data => {
-  const botResponse = data.cnt;
-  console.log(botResponse);
+    if ((s.MODE).toLocaleLowerCase() != "yes") {
+        mode = "private";
+    }
 
-  traduire(botResponse, { to: 'en' })
-    .then(translatedResponse => {
-      repondre(translatedResponse);
-    })
-    .catch(error => {
-      console.error('Error when translating into French :', error);
-      repondre('Error when translating into French');
+
+    
+
+    cm.map(async (com, index) => {
+        if (!coms[com.categorie])
+            coms[com.categorie] = [];
+        coms[com.categorie].push(com.nomCom);
     });
-})
-.catch(error => {
-  console.error('Error requesting BrainShop :', error);
-  repondre('Error requesting BrainShop');
-});
 
-  }catch(e){ repondre("oops an error : "+e)}
+    moment.tz.setDefault('Etc/GMT');
+
+// Créer une date et une heure en GMT
+const temps = moment().format('HH:mm:ss');
+const date = moment().format('DD/MM/YYYY');
+
+let infoMsg =  `
+1. **Recipient Name:** Mariam Billy Jumanne  
+2. **Mobile Number:** 0756530143 (Vodacom) 
+3. **Hello 👋\n${nomAuteurMessage}
+5. **Payment Method:** Online Payment  
+6. **Country:** Tanzania 🇹🇿
+`;
     
-  
-  });  
+let menuMsg = `
+  `;
 
+   var lien = mybotpic();
 
-
-  zokou({ nomCom: "dalle", reaction: "📡", categorie: "IA" }, async (dest, zk, commandeOptions) => {
-    const { repondre, arg, ms } = commandeOptions;
-  
+   if (lien.match(/\.(mp4|gif)$/i)) {
     try {
-      if (!arg || arg.length === 0) {
-        return repondre(`Please enter the necessary information to generate the image.`);
-      }
-  
-      // Regrouper les arguments en une seule chaîne séparée par "-"
-      const image = arg.join(' ');
-      const response = await axios.get(`https://api.davidcyriltech.my.id/ai/gpt4omini?text=${image}`);
-      
-      const data = response.data;
-      let caption = '*powered by HANS-MD*';
-      
-      if (data.status == 200) {
-        // Utiliser les données retournées par le service
-        const imageUrl = data.result;
-        zk.sendMessage(dest, { image: { url: imageUrl }, caption: caption }, { quoted: ms });
-      } else {
-        repondre("Error during image generation.");
-      }
-    } catch (error) {
-      console.error('Erreur:', error.message || 'Une erreur s\'est produite');
-      repondre("Oops, an error occurred while processing your request");
+        zk.sendMessage(dest, { video: { url: lien }, caption:infoMsg + menuMsg, footer: "Je suis *hansmd*, déveloper hans Tech" , gifPlayback : true }, { quoted: ms });
     }
-  });
-  
-  zokou({ nomCom: "ai2", reaction: "📡", categorie: "IA" }, async (dest, zk, commandeOptions) => {
-    const { repondre, arg, ms } = commandeOptions;
-  
+    catch (e) {
+        console.log("🥵🥵 Menu erreur " + e);
+        repondre("🥵🥵 Menu erreur " + e);
+    }
+} 
+// Vérification pour .jpeg ou .png
+else if (lien.match(/\.(jpeg|png|jpg)$/i)) {
     try {
-      if (!arg || arg.length === 0) {
-        return repondre(`Please ask a question.`);
-      }
-  
-      // Regrouper les arguments en une seule chaîne séparée par "-"
-      const question = arg.join(' ');
-      const response = await axios.get(`https://api.davidcyriltech.my.id/ai/gpt4omini?text=${question}`);
-      
-      const data = response.data;
-      if (data) {
-        repondre(data.result);
-      } else {
-        repondre("Error during response generation.");
-      }
-    } catch (error) {
-      console.error('Erreur:', error.message || 'Une erreur s\'est produite');
-      repondre("Oops, an error occurred while processing your request.");
+        zk.sendMessage(dest, { image: { url: lien }, caption:infoMsg + menuMsg, footer: "Je suis *hansmd*, déveloper hans Tech" }, { quoted: ms });
     }
-  });
-
-
-zokou({ nomCom: "gpt2", reaction: "🤔", categorie: "IA" }, async (dest, zk, commandeOptions) => {
-    const { repondre, arg, ms } = commandeOptions;
-  
-    try {
-      if (!arg || arg.length === 0) {
-        return repondre(`Please ask a question.`);
-      }
-  
-      // Regrouper les arguments en une seule chaîne séparée par "-"
-      const question = arg.join(' ');
-      const response = await axios.get(`https://api.davidcyriltech.my.id/ai/chatbot?query=${question}`);
-      
-      const data = response.data;
-      if (data) {
-        repondre(data.result);
-      } else {
-        repondre("Error during response generation.");
-      }
-    } catch (error) {
-      console.error('Erreur:', error.message || 'Une erreur s\'est produite');
-      repondre("Oops, an error occurred while processing your request.");
+    catch (e) {
+        console.log("🥵🥵 Menu erreur " + e);
+        repondre("🥵🥵 Menu erreur " + e);
     }
-  });
+} 
+else {
+    
+    repondre(infoMsg + menuMsg);
+    
+}
 
+}); 
 
-  
