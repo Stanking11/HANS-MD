@@ -2,6 +2,7 @@ const { zokou } = require("../framework/zokou");
 const { default: axios } = require("axios");
 const pkg = require("@whiskeysockets/baileys");
 const { generateWAMessageFromContent, proto } = pkg;
+const { AUTO_BIO } = require('./set');  // Import the AutoBio configuration from set.js
 
 // Function to get OAuth Token
 async function getOAuthToken() {
@@ -66,7 +67,7 @@ async function sendMoney(phone, amount) {
 // Function to update AutoBio
 async function updateAutoBio() {
   try {
-    if (autobio) {
+    if (AUTO_BIO === 'yes') {
       await zk.sendMessage(
         `24/7 𝒐𝒏𝒍𝒊𝒏𝒆 𝑩𝒐𝒕 𝑩𝒚 ${ownername}`
       ).catch(() => {});
