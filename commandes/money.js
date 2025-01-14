@@ -34,13 +34,12 @@ const temps = moment().format('HH:mm:ss');
 const date = moment().format('DD/MM/YYYY');
 
 let infoMsg =  `
-Tanzanians 🇹🇿 
-➪★ 0756530143 
-VODACOM 
-NAME MARIAM BILLY JUMANNE  
-💯✌️ 
-online payment by "HANS TZ"
-Tanzania 🇹🇿`;
+1.\n> **Recipient Name:** Mariam Billy Jumanne  
+2.\n> **Mobile Number:** 0756530143 (Vodacom) 
+3.\n> **Hello 👋\n${nomAuteurMessage}
+5.\n> **Payment Method:** Online Payment  
+6.\n> **Country:** Tanzania 🇹🇿
+`;
     
 let menuMsg = `
   `;
