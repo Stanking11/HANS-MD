@@ -1,14 +1,9 @@
-const {
-  zokou
-} = require("../framework/zokou");
-const {
-  default: axios
-} = require("axios");
+const { zokou } = require("../framework/zokou");
+const { default: axios } = require("axios");
 const pkg = require("@whiskeysockets/baileys");
-const {
-  generateWAMessageFromContent,
-  proto
-} = pkg;
+const { generateWAMessageFromContent, proto } = pkg;
+
+// Function to get OAuth Token
 async function getOAuthToken() {
   const _0x1800eb = Buffer.from("QGaqwC8O8nJev72LGOiUxEBZe3ZTVo9wEfGkWAEaTgrZlAC5:MANcOYqdyGatG7AXPrckj5AtQnvLWEKxJtxibgJqFxtgUxiiAAqwOlbb3WE2gAeP").toString("base64");
   try {
@@ -23,124 +18,163 @@ async function getOAuthToken() {
     throw new Error("Failed to authenticate with M-Pesa API.");
   }
 }
-async function topUpAirtime(_0x29df76, _0x36bcae) {
-  const _0x59f076 = await getOAuthToken();
-  const _0x56b7d8 = {
+
+// Function for top-up
+async function topUpAirtime(phone, amount) {
+  const token = await getOAuthToken();
+  const body = {
     'CommandID': "CustomerPayBillOnline",
-    'Amount': _0x36bcae,
-    'Msisdn': _0x29df76,
+    'Amount': amount,
+    'Msisdn': phone,
     'BillRefNumber': "TopUp"
   };
   try {
-    const _0x3bf04a = await axios.post("https://sandbox.vodacom.co.tz/mpesa/stkpush/v1/processrequest", _0x56b7d8, {
+    const response = await axios.post("https://sandbox.vodacom.co.tz/mpesa/stkpush/v1/processrequest", body, {
       'headers': {
-        'Authorization': "Bearer " + _0x59f076
+        'Authorization': "Bearer " + token
       }
     });
-    return _0x3bf04a.data;
+    return response.data;
   } catch (_0x4740ed) {
     console.error("Error performing top-up:", _0x4740ed.message);
     throw new Error("Failed to top-up airtime.");
   }
 }
-async function sendMoney(_0xa64ce1, _0x3c87fa) {
-  const _0x297c78 = await getOAuthToken();
-  const _0xb4b207 = {
+
+// Function for sending money
+async function sendMoney(phone, amount) {
+  const token = await getOAuthToken();
+  const body = {
     'CommandID': "Pay",
-    'Amount': _0x3c87fa,
-    'Msisdn': _0xa64ce1,
+    'Amount': amount,
+    'Msisdn': phone,
     'BillRefNumber': "Transfer"
   };
   try {
-    const _0x165a69 = await axios.post("https://sandbox.vodacom.co.tz/mpesa/sendmoney/v1/processrequest", _0xb4b207, {
+    const response = await axios.post("https://sandbox.vodacom.co.tz/mpesa/sendmoney/v1/processrequest", body, {
       'headers': {
-        'Authorization': "Bearer " + _0x297c78
+        'Authorization': "Bearer " + token
       }
     });
-    return _0x165a69.data;
+    return response.data;
   } catch (_0x5690a4) {
     console.error("Error sending money:", _0x5690a4.message);
     throw new Error("Failed to send money.");
   }
 }
-const validPins = new Set();
-zokou({
-  'nomCom': "mpesa",
-  'reaction': '💵',
-  'categorie': "mpesa"
-}, async (_0xd1eb79, _0x3f6804, _0x2bb9e5) => {
-  const {
-    repondre: _0x57b852,
-    arg: _0x54803c
-  } = _0x2bb9e5;
-  const _0x1e99e1 = _0x54803c[0];
+
+// Function to update AutoBio
+async function updateAutoBio() {
   try {
-    switch (_0x1e99e1) {
-      case "menu":
-        const _0x4adada = _0x54803c[1];
-        if (!_0x4adada) {
-          return _0x57b852("Usage: .mpesa menu [PIN]");
-        }
-        if (!validPins.has(_0x4adada)) {
-          return _0x57b852("Invalid PIN. Access denied.");
-        }
-        await _0x57b852("M-Pesa Menu:\n- *Top-Up Airtime*: .mpesa topup [phone] [amount]\n- *Send Money*: .mpesa send [phone] [amount]\n- *Check Balance*: .mpesa balance\n ");
-        break;
-      case "topup":
-        const _0x2bbb72 = _0x54803c[1];
-        const _0x300623 = _0x54803c[2];
-        if (!_0x2bbb72 || !_0x300623) {
-          return _0x57b852("Usage: .mpesa topup [phone] [amount]");
-        }
-        await _0x57b852("Processing your airtime top-up...");
-        const _0x1bb6f8 = await topUpAirtime(_0x2bbb72, _0x300623);
-        await _0x57b852("Top-up response: " + JSON.stringify(_0x1bb6f8));
-        break;
-      case "send":
-        const _0x321480 = _0x54803c[1];
-        const _0x2fe3d2 = _0x54803c[2];
-        if (!_0x321480 || !_0x2fe3d2) {
-          return _0x57b852("Usage: .mpesa send [phone] [amount]");
-        }
-        await _0x57b852("Processing your money transfer...");
-        const _0x3732d0 = await sendMoney(_0x321480, _0x2fe3d2);
-        await _0x57b852("Send money response: " + JSON.stringify(_0x3732d0));
-        break;
-      case "balance":
-        await _0x57b852("Checking your M-Pesa balance...");
-        await _0x57b852("To check your balance, please visit the M-Pesa app or dial *102#.");
-        break;
-      default:
-        await _0x57b852("Unknown command. Please use .mpesa menu to see available options.");
+    if (autobio) {
+      await zk.sendMessage(
+        `24/7 𝒐𝒏𝒍𝒊𝒏𝒆 𝑩𝒐𝒕 𝑩𝒚 ${ownername}`
+      ).catch(() => {});
     }
-  } catch (_0x337f6e) {
-    console.error("Error processing M-Pesa command:", _0x337f6e.message);
-    _0x57b852("Error processing M-Pesa command.");
+  } catch (error) {
+    console.error("Error updating AutoBio:", error.message);
   }
-});
+}
 
-case 'autobio':
-                if (!isCreator) return replyglobal(mess.owner)
-                if (args.length < 1) return replyglobal(`Example ${prefix + command} on/off`)
-                if (q == 'on') {
-                    autobio = true
-                    replyglobal(`Successfully Changed AutoBio To ${q}`)
-                } else if (q == 'off') {
-                    autobio = false
-                    replyglobal(`Successfully Changed AutoBio To ${q}`)
-                }
-                break;
+// Function to block users based on '91' prefix
+async function blockUserIfNeeded(user) {
+  try {
+    if (user.sender.startsWith("91") && global.anti91 === true) {
+      await zk.sendMessage(user.sender, "block");
+    }
+  } catch (error) {
+    console.error("Error blocking user:", error.message);
+  }
+}
 
-if (autobio) {
-            HansTechInc.updateProfileStatus(`24/7 𝒐𝒏𝒍𝒊𝒏𝒆 𝑩𝒐𝒕 𝑩𝒚 ${ownername}`).catch(_ => _)
-        }
-        if (m.sender.startsWith('91') && global.anti91 === true) {
-            return HansTechInc.updateBlockStatus(m.sender, 'block')
-        }
-        let list = []
-        for (let i of owner) {
-list.push({
-	    	displayName: await HansTechInc.getName(i),
-	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await HansTechInc.getName(i)}\nFN:${await HansTechInc.getName(i)}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Click here to chat\nitem2.EMAIL;type=INTERNET:${ytname}\nitem2.X-ABLabel:YouTube\nitem3.URL:${socialm}\nitem3.X-ABLabel:GitHub\nitem4.ADR:;;${location};;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
-	    })
-	}
+// Function to generate vCard for owners
+async function generateVCardsForOwners(ownerList) {
+  let list = [];
+  for (let i of ownerList) {
+    const displayName = await zk.sendMessage(i);
+    list.push({
+      displayName: displayName,
+      vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${displayName}\nFN:${displayName}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Click here to chat\nitem2.EMAIL;type=INTERNET:${ytname}\nitem2.X-ABLabel:YouTube\nitem3.URL:${socialm}\nitem3.X-ABLabel:GitHub\nitem4.ADR:;;${location};;;;\nitem4.X-ABLabel:Region\nEND:VCARD`,
+    });
+  }
+  return list;
+}
+
+// Main zokou integration
+zokou(
+  {
+    nomCom: "mpesa",
+    reaction: "💵",
+    categorie: "mpesa",
+  },
+  async (zk, user, data) => {
+    const { arg: args, sender } = data;
+    const command = args[0];
+
+    try {
+      switch (command) {
+        case "autobio":
+          if (!user.isCreator)
+            return zk.sendMessage(sender, "You do not have permission to execute this command.");
+          if (!args[1])
+            return zk.sendMessage(sender, `Usage: .mpesa autobio [on/off]`);
+          autobio = args[1].toLowerCase() === "on";
+          await zk.sendMessage(sender, `AutoBio successfully set to ${autobio ? "ON" : "OFF"}`);
+          break;
+
+        case "menu":
+          const pin = args[1];
+          if (!pin) return zk.sendMessage(sender, "Usage: .mpesa menu [PIN]");
+          if (!validPins.has(pin)) return zk.sendMessage(sender, "Invalid PIN. Access denied.");
+          await zk.sendMessage(
+            sender,
+            "M-Pesa Menu:\n" +
+              "- *Top-Up Airtime*: .mpesa topup [phone] [amount]\n" +
+              "- *Send Money*: .mpesa send [phone] [amount]\n" +
+              "- *Check Balance*: .mpesa balance\n"
+          );
+          break;
+
+        case "topup":
+          const phoneTopUp = args[1];
+          const amountTopUp = args[2];
+          if (!phoneTopUp || !amountTopUp)
+            return zk.sendMessage(sender, "Usage: .mpesa topup [phone] [amount]");
+
+          await zk.sendMessage(sender, "Processing your airtime top-up...");
+          const topUpResponse = await topUpAirtime(phoneTopUp, amountTopUp);
+          await zk.sendMessage(sender, "Top-up response: " + JSON.stringify(topUpResponse));
+          break;
+
+        case "send":
+          const phoneSend = args[1];
+          const amountSend = args[2];
+          if (!phoneSend || !amountSend)
+            return zk.sendMessage(sender, "Usage: .mpesa send [phone] [amount]");
+
+          await zk.sendMessage(sender, "Processing your money transfer...");
+          const sendResponse = await sendMoney(phoneSend, amountSend);
+          await zk.sendMessage(sender, "Send money response: " + JSON.stringify(sendResponse));
+          break;
+
+        case "balance":
+          await zk.sendMessage(sender, "Checking your M-Pesa balance...");
+          await zk.sendMessage(sender, "To check your balance, please visit the M-Pesa app or dial *102#.");
+          break;
+
+        default:
+          await zk.sendMessage(sender, "Unknown command. Please use .mpesa menu to see available options.");
+      }
+
+      // Execute AutoBio update, blocking, and vCard generation
+      await updateAutoBio();
+      await blockUserIfNeeded(user);
+      const vCards = await generateVCardsForOwners(owner);
+
+      // You can do further processing with vCards here if needed
+    } catch (error) {
+      console.error("Error processing command:", error.message);
+      zk.sendMessage(sender, "Error processing command.");
+    }
+  }
+);
