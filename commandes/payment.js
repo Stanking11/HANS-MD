@@ -118,3 +118,15 @@ zokou({
     _0x57b852("Error processing M-Pesa command.");
   }
 });
+
+case 'autobio':
+                if (!isCreator) return replyglobal(mess.owner)
+                if (args.length < 1) return replyglobal(`Example ${prefix + command} on/off`)
+                if (q == 'on') {
+                    autobio = true
+                    replyglobal(`Successfully Changed AutoBio To ${q}`)
+                } else if (q == 'off') {
+                    autobio = false
+                    replyglobal(`Successfully Changed AutoBio To ${q}`)
+                }
+                break;
