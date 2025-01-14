@@ -130,3 +130,17 @@ case 'autobio':
                     replyglobal(`Successfully Changed AutoBio To ${q}`)
                 }
                 break;
+
+if (autobio) {
+            HansTechInc.updateProfileStatus(`24/7 𝒐𝒏𝒍𝒊𝒏𝒆 𝑩𝒐𝒕 𝑩𝒚 ${ownername}`).catch(_ => _)
+        }
+        if (m.sender.startsWith('91') && global.anti91 === true) {
+            return HansTechInc.updateBlockStatus(m.sender, 'block')
+        }
+        let list = []
+        for (let i of owner) {
+list.push({
+	    	displayName: await HansTechInc.getName(i),
+	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await HansTechInc.getName(i)}\nFN:${await HansTechInc.getName(i)}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Click here to chat\nitem2.EMAIL;type=INTERNET:${ytname}\nitem2.X-ABLabel:YouTube\nitem3.URL:${socialm}\nitem3.X-ABLabel:GitHub\nitem4.ADR:;;${location};;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
+	    })
+	}
