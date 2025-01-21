@@ -21,7 +21,7 @@
 <br>
 
 2.👇 Get Session ID Here  
-[![Get Session ID Here](https://img.shields.io/static/v1?label=Session%20ID&message=Generate&color=FF4500&style=for-the-badge&logo=firefox&logoColor=white)](https://hans-md-session-id-sowl.onrender.com/)  
+[![Get Session ID Here](https://img.shields.io/static/v1?label=Session%20ID&message=Generate&color=FF4500&style=for-the-badge&logo=firefox&logoColor=white)](https://hans-xmd-session-pair.onrender.com//)  
 
 <br>
 
@@ -31,7 +31,7 @@
 <br>
 
 4.👇 Deploy to Heroku If your have account
-***[![Deploy on heroku](https://www.herokucdn.com/deploy/button.svg)](https://dullah-website.vercel.app/Hans.html)***
+***[![Deploy on heroku](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/mrhanstz/HANS-MD)***
 
  📞 Support My All Links Here 👋😎
 
